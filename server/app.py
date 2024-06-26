@@ -49,14 +49,5 @@ def pets_by_species(species):
             }
     return make_response(body, 200)
 
-@app.route('/demo_json')
-def demo_json():
-    pet = Pet.query.first()
-    pet_dict = {"id": pet.id,
-                 "name" : pet.name,
-                 "species" : pet.species
-                 }
-    return make_response(pet_dict, 200)
-
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
